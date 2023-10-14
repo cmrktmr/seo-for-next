@@ -113,5 +113,4 @@ For an exhaustive list of supported schemas, refer to the utility functions in t
 We welcome contributions of all sizes. Before submitting, please read our [Contributing Guidelines](./CONTRIBUTING.md).
 
 ## 📄 License
-
 This project is licensed under the MIT License. Read the full terms in the [LICENSE.md](./LICENSE.md) file.
