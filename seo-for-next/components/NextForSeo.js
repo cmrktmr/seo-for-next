@@ -20,7 +20,7 @@ import {
     generateJobPostingSchema
 } from '../utils/schemaGenerators';
 
-function NextForSeo({ title, description, image, type, schemaTypes = [], schemaDatas = [] }) {
+function SeoForNext({ title, description, image, type, schemaTypes = [], schemaDatas = [] }) {
     const schemas = [];
 
     schemaTypes.forEach((schemaType, index) => {
@@ -105,4 +105,4 @@ function NextForSeo({ title, description, image, type, schemaTypes = [], schemaD
     );
 }
 
-export default NextForSeo;
+export default SeoForNext;

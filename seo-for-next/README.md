@@ -1,6 +1,6 @@
-# 🌐 NextForSeo
+# 🌐 SeoForNext
 
-Enhance the SEO of your Next.js applications with ease. `NextForSeo` provides you with simple yet powerful tools to embed various JSON-LD schema types directly into your projects.
+Enhance the SEO of your Next.js applications with ease. `SeoForNext` provides you with simple yet powerful tools to embed various JSON-LD schema types directly into your projects.
 
 
 ## 🚀 Features
@@ -33,9 +33,9 @@ Ensure you have the following installed:
 
 ### Installation
 
-1. Install the `NextForSeo` package:
+1. Install the `SeoForNext` package:
    ```bash
-   npm install nextforseo
+   npm install SeoForNext
    ```
 
 ## 🔍 Usage Examples
@@ -43,12 +43,12 @@ Ensure you have the following installed:
 ### Basic Usage
 
 ```jsx
-import NextForSeo from 'nextforseo';
+import SeoForNext from 'SeoForNext';
 
 function MyComponent() {
     return (
         <>
-            <NextForSeo 
+            <SeoForNext 
                 title="My Awesome Article" 
                 description="This article talks about awesome things." 
                 image="/path_to_image.jpg" 
@@ -64,12 +64,12 @@ function MyComponent() {
 ### Multiple Schemas
 
 ```jsx
-import NextForSeo from 'nextforseo';
+import SeoForNext from 'SeoForNext';
 
 function MyComponent() {
     return (
         <>
-            <NextForSeo 
+            <SeoForNext 
                 title="My Website" 
                 description="Welcome to my cool website." 
                 image="/path_to_main_image.jpg" 

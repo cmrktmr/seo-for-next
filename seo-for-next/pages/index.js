@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-import NextForSeo from '@/components/NextForSeo'
+import SeoForNext from '@/components/SeoForNext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -109,7 +109,7 @@ export default function Home() {
               with&nbsp;Vercel.
             </p>
           </a>
-          <NextForSeo
+          <SeoForNext
             title="Example Article"
             description="This is an example article."
             image="/path/to/article-image.jpg"
