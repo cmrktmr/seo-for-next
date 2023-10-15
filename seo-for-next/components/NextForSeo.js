@@ -23,70 +23,34 @@ import {
 function SeoForNext({ title, description, image, type, schemaTypes = [], schemaDatas = [] }) {
     const schemas = [];
 
+    const schemaGeneratorMap = {
+        website: generateWebSiteSchema,
+        article: generateArticleSchema,
+        organization: generateOrganizationSchema,
+        breadcrumb: generateBreadcrumbListSchema,
+        event: generateEventSchema,
+        product: generateProductSchema,
+        review: generateReviewSchema,
+        qaPage: generateQAPageSchema,
+        localBusiness: generateLocalBusinessSchema,
+        video: generateVideoSchema,
+        person: generatePersonSchema,
+        book: generateBookSchema,
+        recipe: generateRecipeSchema,
+        course: generateCourseSchema,
+        movie: generateMovieSchema,
+        sportsEvent: generateSportsEventSchema,
+        place: generatePlaceSchema,
+        jobPosting: generateJobPostingSchema,
+    };
+    
     schemaTypes.forEach((schemaType, index) => {
-        let jsonData;
-
-        switch (schemaType) {
-            case "website":
-                jsonData = generateWebSiteSchema(schemaDatas[index]);
-                break;
-            case "article":
-                jsonData = generateArticleSchema(schemaDatas[index]);
-                break;
-            case "organization":
-                jsonData = generateOrganizationSchema(schemaDatas[index]);
-                break;
-            case "breadcrumb":
-                jsonData = generateBreadcrumbListSchema(schemaDatas[index]);
-                break;
-            case "event":
-                jsonData = generateEventSchema(schemaDatas[index]);
-                break;
-            case "product":
-                jsonData = generateProductSchema(schemaDatas[index]);
-                break;
-            case "review":
-                jsonData = generateReviewSchema(schemaDatas[index]);
-                break;
-            case "qaPage":
-                jsonData = generateQAPageSchema(schemaDatas[index]);
-                break;
-            case "localBusiness":
-                jsonData = generateLocalBusinessSchema(schemaDatas[index]);
-                break;
-            case "video":
-                jsonData = generateVideoSchema(schemaDatas[index]);
-                break;
-            case "person":
-                jsonData = generatePersonSchema(schemaDatas[index]);
-                break;
-            case "book":
-                jsonData = generateBookSchema(schemaDatas[index]);
-                break;
-            case "recipe":
-                jsonData = generateRecipeSchema(schemaDatas[index]);
-                break;
-            case "course":
-                jsonData = generateCourseSchema(schemaDatas[index]);
-                break;
-            case "movie":
-                jsonData = generateMovieSchema(schemaDatas[index]);
-                break;
-            case "sportsEvent":
-                jsonData = generateSportsEventSchema(schemaDatas[index]);
-                break;
-            case "place":
-                jsonData = generatePlaceSchema(schemaDatas[index]);
-                break;
-            case "jobPosting":
-                jsonData = generateJobPostingSchema(schemaDatas[index]);
-                break;
-            default:
-                jsonData = null;
-        }
-
-        if (jsonData) {
-            schemas.push(jsonData);
+        const generatorFunction = schemaGeneratorMap[schemaType];
+        if (generatorFunction) {
+            const jsonData = generatorFunction(schemaDatas[index]);
+            if (jsonData) {
+                schemas.push(jsonData);
+            }
         }
     });
 
